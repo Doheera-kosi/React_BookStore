@@ -1,8 +1,40 @@
 /* eslint-disable */
+import { v4 as uuidv4 } from 'uuid';
 
 const REMOVE_BOOK = 'BOOK_REMOVED';
 const ADD_BOOK = 'BOOK_ADDED';
-const initialState = [];
+const initialState = [
+  {
+    id: uuidv4(),
+    title: 'The Great Controversy',
+    author: 'Ellen G. White'
+  },
+  {
+    id: uuidv4(),
+    title: 'The Great Controversy',
+    author: 'Ellen G. White'
+  },
+  {
+    id: uuidv4(),
+    title: 'The Great Controversy',
+    author: 'Ellen G. White'
+  },
+  {
+    id: uuidv4(),
+    title: 'The Great Controversy',
+    author: 'Ellen G. White'
+  },
+  {
+    id: uuidv4(),
+    title: 'The Great Controversy',
+    author: 'Ellen G. White'
+  },
+  {
+    id: uuidv4(),
+    title: 'The Great Controversy',
+    author: 'Ellen G. White'
+  },
+];
 
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {

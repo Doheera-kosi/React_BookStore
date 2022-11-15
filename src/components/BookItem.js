@@ -1,16 +1,30 @@
 /* eslint-disable */
 import React from 'react';
-import { IoTrashBin } from 'react-icons/io5';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books'
 
-function BookItem(props) {
-  const { title, author, id } = props
+const BookItem = (props) => {
+  const dispatch = useDispatch();
+  const { title, author, id } = props;
+  const deleteBook = (id) => {
+    dispatch(removeBook(id));
+  };
+
   return (
-    <section className='displayBooks'>
-        <p className='book'> Book Title: {title} </p>
-        <p className='book'> Author's Name: {author} </p>
-        <button type='button' className='removeBtn' id={id}><IoTrashBin /></button>
-    </section>
-  )
+    <div className='displayBooks'>
+      <p className='book'>{' '} Book Title: {title}</p>
+      <p className='book'>{' '} Book Author: {author}</p>
+      <button type='button' className='removeBtn' onClick={() => deleteBook(id)}>Delete</button>
+    </div>
+  );
+};
+
+BookItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+
 }
 
 export default BookItem;

@@ -3,6 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 const REMOVE_BOOK = 'BOOK_REMOVED';
 const ADD_BOOK = 'BOOK_ADDED';
+
+// Default books
 const initialState = [
   {
     id: uuidv4(),
@@ -41,7 +43,7 @@ const booksReducer = (state = initialState, action) => {
     case ADD_BOOK:
       return [
         ...state,
-        action.book,
+        action.payload,
       ]
     
     case REMOVE_BOOK:
@@ -52,15 +54,16 @@ const booksReducer = (state = initialState, action) => {
   }
 };
 
-export const addBook = (payload) => {
-  const { id, title, author } = payload;
+const addBook = (payload) => {
+  // const { id, title, author } = payload;
   return {
     type: ADD_BOOK, 
-    book: { id, title, author }
+    // book: { id, title, author }
+    payload
   }
 };
 
-export const removeBook = (id) => {
+const removeBook = (id) => {
   return {
     type: REMOVE_BOOK,
     id,
@@ -68,3 +71,4 @@ export const removeBook = (id) => {
 };
 
 export default booksReducer;
+export { addBook, removeBook }

@@ -10,14 +10,14 @@
 
 - Major Languages (HTML, CSS, JavaScript)
 - Framework/Libraries (React, Redux)
-- Technologies/Tools used
-[x] create-react-app tool
-[x] Webpack(Code Bundlng et al)
-[x] Babel (code transpiling)
-[x] Jest(for testing)
-[x] Git(version control)
-[x] ESLint(JavaScript linting)
-[x] Stylelint(style linting)
+- Technologies/Tools used:
+| `create-react-app tool`
+| `Webpack(Code Bundlng et al)`
+| `Babel (code transpiling)`
+| `Jest(for testing)`
+| `Git(version control)`
+| `ESLint(JavaScript linting)`
+| `Stylelint(style linting)`
 
 ## Live Demo (Not available yet)
 

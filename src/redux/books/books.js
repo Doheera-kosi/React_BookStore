@@ -1,74 +1,56 @@
 /* eslint-disable */
-import { v4 as uuidv4 } from 'uuid';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { delBook, addBook, getAllBooks } from '../API';
 
-const REMOVE_BOOK = 'BOOK_REMOVED';
-const ADD_BOOK = 'BOOK_ADDED';
+// Actions
+const ADD_BOOK = 'bookstore/books/ADD_BOOK';
+const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
+const GET_BOOK = 'bookstore/books/GET_BOOK';
 
 // Default books
-const initialState = [
-  {
-    id: uuidv4(),
-    title: 'The Great Controversy',
-    author: 'Ellen G. White'
-  },
-  {
-    id: uuidv4(),
-    title: 'The Great Controversy',
-    author: 'Ellen G. White'
-  },
-  {
-    id: uuidv4(),
-    title: 'The Great Controversy',
-    author: 'Ellen G. White'
-  },
-  {
-    id: uuidv4(),
-    title: 'The Great Controversy',
-    author: 'Ellen G. White'
-  },
-  {
-    id: uuidv4(),
-    title: 'The Great Controversy',
-    author: 'Ellen G. White'
-  },
-  {
-    id: uuidv4(),
-    title: 'The Great Controversy',
-    author: 'Ellen G. White'
-  },
-];
+const initialState = [];
 
+// Reducers
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {
+
+    case GET_BOOK:
+      return action.payload;
+
     case ADD_BOOK:
-      return [
-        ...state,
-        action.payload,
-      ]
+      return [...state, action.payload];
     
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.id)
+      return state.filter((book) => book.item_id !== action.payload)
 
     default:
-      return state
+      return state;
   }
 };
 
-const addBook = (payload) => {
-  // const { id, title, author } = payload;
-  return {
-    type: ADD_BOOK, 
-    // book: { id, title, author }
-    payload
-  }
+const getBooks = () => async (dispacth) => {
+  const res = await getAllBooks();
+  dispacth({
+    type: GET_BOOK,
+    payload: res,
+  });
 };
 
-const removeBook = (id) => {
-  return {
+const addbook = (payload) => async (dispacth) => {
+  await addBook(payload);
+  dispacth({
+    type: ADD_BOOK,
+    payload,
+  });
+};
+
+const removeBook = (payload) => async (dispacth) => {
+  await delBook(payload);
+  dispacth({
     type: REMOVE_BOOK,
-    id,
-  }
+    payload,
+  });
 };
 
 export default booksReducer;
-export { addBook, removeBook }
+export { addbook, removeBook, getBooks }

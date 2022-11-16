@@ -6,8 +6,10 @@ import { removeBook } from '../redux/books/books'
 
 const BookItem = (props) => {
   const dispatch = useDispatch();
+
   const { title, author, id } = props;
-  const deleteBook = (id) => {
+  
+  const deleteBook = () => {
     dispatch(removeBook(id));
   };
 
@@ -15,7 +17,7 @@ const BookItem = (props) => {
     <div className='displayBooks'>
       <p className='book'>{' '} Book Title: {title}</p>
       <p className='book'>{' '} Book Author: {author}</p>
-      <button type='button' className='removeBtn' onClick={() => deleteBook(id)}>Delete</button>
+      <button type='button' className='removeBtn' onClick={deleteBook}>Delete</button>
     </div>
   );
 };
@@ -24,7 +26,6 @@ BookItem.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-
 }
 
 export default BookItem;

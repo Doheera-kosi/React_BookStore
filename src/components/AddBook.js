@@ -1,21 +1,25 @@
 /* eslint-disable */
 import { useDispatch } from 'react-redux';
 import { v4 } from 'uuid';
-import { addBook } from '../redux/books/books';
+import { addbook } from '../redux/books/books';
 import React, { useState } from 'react';
 
-const AddBook = (props) => {
+const AddBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
   const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newBook = { id: v4(), title, author };
-    dispatch(addBook(newBook))
-    setTitle('');
-    setAuthor('');
+    if (title !== '' && author !== '') {
+      const newBook = { item_id: v4(), title, author, category: 'Novel' };
+      dispatch(addbook(newBook))
+      setTitle('');
+      setAuthor('');
+    }
   }
+
   return (
     <div className='formContainer'>
       <form className='form' onSubmit={handleSubmit}>

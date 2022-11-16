@@ -2,54 +2,64 @@
 
 # BookStore
 
-> Description the project.
+## Description the project.
+> Bookstore - An app that allows you to display a list of added books, add new book and remove a book, built using React, Redux
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Major Languages (HTML, CSS, JavaScript)
+- Framework/Libraries (React, Redux)
+- Technologies/Tools used
+[x] create-react-app tool
+[x] Webpack(Code Bundlng et al)
+[x] Babel (code transpiling)
+[x] Jest(for testing)
+[x] Git(version control)
+[x] ESLint(JavaScript linting)
+[x] Stylelint(style linting)
 
-## Live Demo (if available)
+## Live Demo (Not available yet)
 
 [Live Demo Link](https://livedemo.com)
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+- A text editor(preferably Visual Studio Code) or any of your choice
 
 ### Setup
 
 ### Install
+- Git
+- Node
+- Text editor preferably VScode
 
-### Usage
+## Usage
+### Clone this repository
+> $ git clone https://github.com/Doheera-kosi/React_BookStore/:
+> $ cd React_BookStore
 
-### Run tests
+### `npm start`
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Deployment
+## Run tests
+### `npm run test`
+> Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 
 
-## Authors
+## Author
 
-👤 **Author1**
+👤 **Evans Kupour**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- GitHub: [@githubhandle](https://github.com/Doheera-kosi/)
+- Twitter: [@twitterhandle](https://twitter.com/@KupourE/)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing

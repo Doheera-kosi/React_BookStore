@@ -1,56 +1,57 @@
-/* eslint-disable */
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { delBook, addBook, getAllBooks } from '../API';
+import axios from 'axios';
 
-// Actions
-const ADD_BOOK = 'bookstore/books/ADD_BOOK';
-const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
-const GET_BOOK = 'bookstore/books/GET_BOOK';
+const GET_BOOK = 'book/BookStore/GET_BOOK';
+const ADD_BOOK = 'book/BookStore/BOOK_ADDED';
+const REMOVE_BOOK = 'book/BookStore/BOOK_REMOVED';
+const apiURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/mG3tUSvmSMLlWNSXKaVe/books';
 
-// Default books
 const initialState = [];
 
-// Reducers
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {
+    case `${ADD_BOOK}/fulfilled`:
+      return [...state];
 
-    case GET_BOOK:
+    case `${REMOVE_BOOK}/fulfilled`:
+      return state.filter((book) => book.id !== action.payload);
+
+    case `${GET_BOOK}/fulfilled`:
       return action.payload;
-
-    case ADD_BOOK:
-      return [...state, action.payload];
-    
-    case REMOVE_BOOK:
-      return state.filter((book) => book.item_id !== action.payload)
 
     default:
       return state;
   }
 };
 
-const getBooks = () => async (dispacth) => {
-  const res = await getAllBooks();
-  dispacth({
-    type: GET_BOOK,
-    payload: res,
-  });
-};
+export const getBooks = createAsyncThunk((GET_BOOK), async () => {
+  const res = await axios.get(apiURL);
+  const books = res.data;
+  const newArray = Object.keys(books).map((id) => ({
+    id,
+    author: books[id][0].author,
+    title: books[id][0].title,
+    category: books[id][0].category,
+  }));
+  return newArray;
+});
 
-const addbook = (payload) => async (dispacth) => {
-  await addBook(payload);
-  dispacth({
-    type: ADD_BOOK,
-    payload,
+export const addBook = createAsyncThunk((ADD_BOOK), async (payload, thunkApi) => {
+  const {
+    id, title, author, category,
+  } = payload;
+  await axios.post(apiURL, {
+    item_id: id,
+    title,
+    author,
+    category,
   });
-};
+  thunkApi.dispatch(getBooks());
+});
 
-const removeBook = (payload) => async (dispacth) => {
-  await delBook(payload);
-  dispacth({
-    type: REMOVE_BOOK,
-    payload,
-  });
-};
+export const removeBook = createAsyncThunk((REMOVE_BOOK), async (id) => {
+  await axios.delete(`${apiURL}/${id}`);
+  return id;
+});
 
 export default booksReducer;
-export { addbook, removeBook, getBooks }

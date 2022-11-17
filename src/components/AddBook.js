@@ -1,31 +1,31 @@
 /* eslint-disable */
 import { useDispatch } from 'react-redux';
 import { v4 } from 'uuid';
-import { addbook } from '../redux/books/books';
+import { addBook } from '../redux/books/books';
 import React, { useState } from 'react';
 
 const AddBook = () => {
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [dataTitle, setTitle] = useState('');
+  const [dataAuthor, setAuthor] = useState('');
 
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (title !== '' && author !== '') {
-      const newBook = { item_id: v4(), title, author, category: 'Novel' };
-      dispatch(addbook(newBook))
+    
+      const newBook = { id: v4(), title: dataTitle, author: dataAuthor, category: '' };
       setTitle('');
       setAuthor('');
-    }
+      dispatch(addBook(newBook))
+    
   }
 
   return (
     <div className='formContainer'>
       <form className='form' onSubmit={handleSubmit}>
         <label>Add a new book</label>
-        <input className='input' onChange={(e) => setTitle(e.target.value)} value={title} type='text' placeholder='Title'/>
-        <input className='input' onChange={(e) => setAuthor(e.target.value)} value={author} type='text' placeholder='Author'/>
+        <input className='input' onChange={(e) => setTitle(e.target.value)} value={dataTitle} type='text' placeholder='Title'/>
+        <input className='input' onChange={(e) => setAuthor(e.target.value)} value={dataAuthor} type='text' placeholder='Author'/>
         <button type='submit' className='submitBtn'>Submit</button>
       </form>
     </div>

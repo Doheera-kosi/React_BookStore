@@ -9,7 +9,7 @@ const BookItem = (props) => {
 
   const { title, author, id } = props;
   
-  const deleteBook = () => {
+  const deleteBook = (id) => {
     dispatch(removeBook(id));
   };
 
@@ -17,15 +17,21 @@ const BookItem = (props) => {
     <div className='displayBooks'>
       <p className='book'>{' '} Book Title: {title}</p>
       <p className='book'>{' '} Book Author: {author}</p>
-      <button type='button' className='removeBtn' onClick={deleteBook}>Delete</button>
+      <button type='button' className='removeBtn' onClick={() => deleteBook(id)}>Delete</button>
     </div>
   );
 };
 
 BookItem.propTypes = {
-  title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  author: PropTypes.string,
+  id: PropTypes.string,
 }
+
+BookItem.defaultProps = {
+  title: 'title',
+  author: 'author',
+  id: 'id',
+};
 
 export default BookItem;

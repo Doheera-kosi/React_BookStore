@@ -11,7 +11,7 @@ const Books = () => {
 
   useEffect(() => {
     dispatch(getBooks())
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className='displayContainer' >
@@ -21,7 +21,7 @@ const Books = () => {
       { 
       data && 
         data.map((item) => {
-      return <BookItem key={item.item_id} title={item.title} author={item.author} id={item.item_id} />
+      return <BookItem key={item.id} title={item.title} author={item.author} id={item.id} />
       }) 
       }
       <AddBook />

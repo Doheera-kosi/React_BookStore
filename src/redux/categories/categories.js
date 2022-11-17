@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 const CHECK_STATUS = 'CHECKING_STATUS';
 
 const initialState = [];

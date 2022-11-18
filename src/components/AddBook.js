@@ -29,9 +29,9 @@ const AddBook = () => {
   return (
     <div className="formContainer">
       <form className="form" onSubmit={handleSubmit}>
-        <span className="new-book"> Add New Book</span>
+        <span className="new-book"> ADD NEW BOOK</span>
         <div className="div2">
-          <input className="input" onChange={(e) => setTitle(e.target.value)} value={dataTitle} type="text" placeholder="Title" />
+          <input className="input" onChange={(e) => setTitle(e.target.value)} value={dataTitle} type="text" placeholder="Book title" />
           <input className="input" onChange={(e) => setAuthor(e.target.value)} value={dataAuthor} type="text" placeholder="Author" />
           <select name="select" className="select" onChange={add}>
             <option value="categories" selected disabled>categories</option>

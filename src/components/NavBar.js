@@ -1,16 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import 'font-awesome/css/font-awesome.min.css';
 
 const Navbar = () => (
   <div className="navBar">
-    <span className="Bookstore-CMS Text-Style-5">
-      ICAN Bookstore CMS
+    <span className="main-span">
+      <span className="Bookstore-CMS Text-Style-5">
+        ICAN Bookstore CMS
+      </span>
+      <ul className="links">
+        <Link className="link" to="/">BOOKS</Link>
+        <Link className="link" to="/category">CATEGORY</Link>
+      </ul>
     </span>
-    <ul className="links">
-      <Link className="link" to="/">Book List</Link>
-      <Link className="link" to="/category">Category</Link>
-    </ul>
-    <div className="avatar">Avator</div>
+    <span className="Oval">
+      <i className="fa fa-lg fa-user" />
+    </span>
   </div>
 );
 

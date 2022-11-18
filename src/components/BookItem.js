@@ -56,10 +56,9 @@ const BookItem = (props) => {
       <span className="vll" />
       <div className="div-c">
         <span className="cur-chap">CURRENT CHAPTER</span>
-        <span>Chapter 1000</span>
+        <span className="chap">Chapter 1000</span>
         <button type="button" className="prog-btn">UPDATE PROGRESS</button>
       </div>
-
     </div>
   );
 };

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Farro:wght@300;400;500;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@300;400;700;900&family=Lobster+Two:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Farro:wght@300;400;500;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@300;400;700;900&family=Lobster+Two:wght@400;700&family=Montserrat:wght@400;500&family=Poppins:wght@300;400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&family=Satisfy&display=swap');
 
 .App {
   text-align: center;
@@ -41,29 +41,40 @@
 }
 
 html {
-  background: rgb(229, 229, 231);
-  font-family: 'Farro', sans-serif;
+  background: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  background: #e8e8e8;
+  background: white;
 }
 
 .navBar {
   display: flex;
   align-items: center;
-  box-shadow: 1px 1px 4px 2px #0e0f0f;
-  height: 5.938rem;
+  height: 5.038rem;
+  border-bottom: 1px solid #fafafa;
   background-color: #fff;
+  gap: 5.5rem;
   justify-content: space-between;
+  padding: 0 11rem;
+}
+
+.main-span {
+  display: flex;
+  align-items: center;
+  gap: 10rem;
 }
 
 .Bookstore-CMS {
   width: 15rem;
   height: 2.313rem;
-  margin: 0 6em;
   color: #0290ff;
   font-family: 'Lao', sans-serif;
   font-size: 1.875rem;
@@ -72,28 +83,43 @@ html {
   white-space: nowrap;
 }
 
-.avatar {
+.Oval {
   display: flex;
-  margin-right: 11rem;
+  align-items: center;
+  justify-content: center;
+  width: 2.813rem;
+  height: 2.813rem;
+  border: solid 1px #ac9d9d;
+  border-radius: 50px;
+}
+
+.fa-user {
+  color: #0290ff;
 }
 
 .links {
   display: flex;
   justify-content: space-around;
   padding: 0;
-  width: 13%;
-  margin-right: 35rem;
+  margin-left: 0em;
+  gap: 1rem;
 }
 
 .link {
   text-decoration: none;
-  color: black;
+  font-family: Montserrat;
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
   transition: 1s;
 }
 
 .link:hover {
   border-bottom: 1px solid rgb(235, 219, 4);
   color: crimson;
+}
+
+.link:focus {
+  font-weight: bold;
 }
 
 .displayContainer {
@@ -107,35 +133,64 @@ html {
 
 .displayBooks {
   display: flex;
-  border: 1px solid black;
+  border: 1px solid #e8e8e8;
   padding: 1em 1rem;
-  box-shadow: 1px 2px 5px 1px;
   justify-content: space-between;
+  background: #fff;
 }
 
 .book {
-  margin: 0.3rem 0;
+  width: 7rem;
+  height: 1.125rem;
+  margin: 0 4rem 0 0;
+  opacity: 0.5;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  white-space: nowrap;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
 }
 
 .book-auth {
   margin: 0.3rem 0;
   color: #4386bf;
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin-top: 0;
 }
 
 .book-title {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 1.375rem;
   font-weight: bold;
-  font-size: 1.4rem;
   margin: 0;
+  color: rgb(85, 84, 84);
 }
 
 .new-book {
   font-weight: bold;
   font-size: 1.4rem;
   color: #888;
+  margin: 0.4rem 0;
 }
 
 .cur-chap {
+  opacity: 0.5;
+  font-family: Roboto Slab;
+  font-size: 0.813rem;
   color: #888;
+}
+
+.chap {
+  opacity: 0.5;
+  font-family: Roboto Slab;
+  font-size: 0.813rem;
 }
 
 .removeBtn {
@@ -144,8 +199,13 @@ html {
   justify-content: center;
   border: none;
   background: none;
-  color: #4386bf;
   padding: 0;
+  height: 1.188rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  font-family: Roboto Slab;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
 }
 
 .removeBtn:hover {
@@ -159,7 +219,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1.6rem;
   margin-top: 1rem;
 }
 
@@ -167,7 +227,8 @@ html {
   display: flex;
   flex-direction: row;
   padding-top: 1em;
-  border-top: 1px solid black;
+  border-top: 1px solid #e8e8e8;
+  margin-top: 1.5rem;
 }
 
 .form {
@@ -198,6 +259,7 @@ html {
   border-width: 6px;
   border-radius: 4rem;
   color: #307bbe;
+  border: solid 5px #307bbe;
 }
 
 .status {
@@ -207,8 +269,15 @@ html {
 }
 
 .span-a {
-  font-size: 2em;
-  font-weight: bold;
+  font-family: Montserrat;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.span-b {
+  opacity: 0.5;
+  font-family: Montserrat;
+  font-size: 0.875rem;
 }
 
 .div-c {
@@ -223,8 +292,9 @@ html {
 .prog-btn {
   width: 80%;
   background: #0290ff;
-  color: rgb(190, 190, 190);
+  color: #fafafa;
   height: 2rem;
+  font-family: 'Roboto Slab';
   border: none;
   border-radius: 5px;
   margin-top: 1.3rem;
@@ -232,12 +302,19 @@ html {
 
 .select {
   width: 20%;
+  border: 1px solid #e8e8e8;
+  padding-left: 0.8rem;
+  color: #979595;
 }
 
 .input {
   background: rgb(250, 249, 249);
+  border: 1px solid #e8e8e8;
   height: 2rem;
   width: 30%;
+  padding-left: 0.8rem;
+  font-weight: bold;
+  color: #e8e8e8;
 }
 
 .submitBtn {
@@ -252,15 +329,15 @@ html {
 
 .vl {
   height: 1.8rem;
-  width: 1px;
   background: #cac7c7;
+  border: solid 1px #e8e8e8;
 }
 
 .vll {
-  margin-top: 1.8rem;
-  height: 5rem;
-  width: 1px;
   background: #cac7c7;
+  height: 4.375rem;
+  margin-top: 1.8rem;
+  border: solid 1px #e8e8e8;
 }
 
 .category {

@@ -15,7 +15,7 @@ const Books = () => {
   return (
     <div className="displayContainer">
       {!data.length ? (
-        <p>No books available</p>
+        <p className="no-books">No books available</p>
       ) : null}
       {
       data

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Farro:wght@300;400;500;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@300;400;700;900&family=Lobster+Two:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&family=Satisfy&display=swap');
+
 .App {
   text-align: center;
 }
@@ -39,52 +41,105 @@
 }
 
 html {
-  background: rgb(198, 198, 206);
+  background: rgb(229, 229, 231);
+  font-family: 'Farro', sans-serif;
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  background: #e8e8e8;
 }
 
 .navBar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 6rem;
   box-shadow: 1px 1px 4px 2px #0e0f0f;
+  height: 5.938rem;
+  background-color: #fff;
+  justify-content: space-between;
 }
 
-.Logo {
-  font-size: 2em;
+.Bookstore-CMS {
+  width: 15rem;
+  height: 2.313rem;
+  margin: 0 6em;
+  color: #0290ff;
+  font-family: 'Lao', sans-serif;
+  font-size: 1.875rem;
+  font-weight: bold;
+  letter-spacing: normal;
+  white-space: nowrap;
 }
+
+.avatar {
+  display: flex;
+  margin-right: 11rem;
+}
+
+/* .Logo {
+  font-size: 2em;
+} */
 
 .links {
   display: flex;
   justify-content: space-around;
   padding: 0;
   width: 13%;
+  margin-right: 35rem;
 }
 
 .link {
   text-decoration: none;
   color: black;
+  transition: 1s;
+}
+
+.link:hover {
+  border-bottom: 1px solid rgb(235, 219, 4);
+  color: crimson;
 }
 
 .displayContainer {
   display: flex;
   flex-direction: column;
-  padding: 1em;
   gap: 1em;
   width: 80%;
   margin: auto;
-  margin-top: 10em;
+  margin-top: 4em;
 }
 
 .displayBooks {
+  display: flex;
   border: 1px solid black;
-  padding: 1em;
+  padding: 1em 1rem;
   box-shadow: 1px 2px 5px 1px;
+  justify-content: space-between;
+}
+
+.book {
+  margin: 0.3rem 0;
+}
+
+.book-auth {
+  margin: 0.3rem 0;
+  color: #4386bf;
+}
+
+.book-title {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.new-book {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #888888;
+}
+
+.cur-chap {
+  color: #888888;
 }
 
 .removeBtn {
@@ -93,49 +148,147 @@ html {
   justify-content: center;
   border: none;
   background: none;
+  color: #4386bf;
+  padding: 0;
 }
 
 .removeBtn:hover {
   color: red;
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 1px;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
 }
 
 .formContainer {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: row;
   padding-top: 1em;
-  border: 1px solid black;
+  border-top: 1px solid black;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  margin: auto;
-  width: 50%;
+  width: 100%;
   gap: 10px;
-  padding: 1em;
+}
+
+.div2 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 10px;
+}
+
+.div-b {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.Oval-2 {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-style: solid;
+  border-width: 6px;
+  border-radius: 4rem;
+  color: #307bbe;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.span-a {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.div-c {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+  font-weight: bold;
+}
+
+.prog-btn {
+  width: 80%;
+  background: #0290ff;
+  color: rgb(190, 190, 190);
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 1.3rem;
+}
+
+.select {
+  width: 20%;
 }
 
 .input {
   background: rgb(250, 249, 249);
+  height: 2rem;
+  width: 30%;
 }
 
 .submitBtn {
   border: none;
-  width: min-content;
-  height: 2em;
   border-radius: 5px;
+  white-space: nowrap;
+  width: 20%;
+  background: #0290ff;
+  color: white;
+  font-weight: bold;
+}
+
+.vl {
+  height: 1.8rem;
+  width: 1px;
+  background: #cac7c7;
+}
+
+.vll {
+  margin-top: 1.8rem;
+  height: 5rem;
+  width: 1px;
+  background: #cac7c7;
 }
 
 .category {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+}
+
+.boot {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
 }
 
 .statusBtn {
   border: none;
   border-radius: 5px;
   margin: 5rem;
-  height: 2em;
+  height: 3em;
+  width: min-content;
+  white-space: nowrap;
+  width: 8rem;
+  align-self: center;
+  background: #0290ff;
 }
 
 .statusBtn:hover,

@@ -131,11 +131,11 @@ html {
 .new-book {
   font-weight: bold;
   font-size: 1.4rem;
-  color: #888888;
+  color: #888;
 }
 
 .cur-chap {
-  color: #888888;
+  color: #888;
 }
 
 .removeBtn {
@@ -280,7 +280,6 @@ html {
   border-radius: 5px;
   margin: 5rem;
   height: 3em;
-  width: min-content;
   white-space: nowrap;
   width: 8rem;
   align-self: center;

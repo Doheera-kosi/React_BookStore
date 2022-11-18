@@ -101,13 +101,13 @@ body {
   display: flex;
   justify-content: space-around;
   padding: 0;
-  margin-left: 0em;
+  margin-left: 0;
   gap: 1rem;
 }
 
 .link {
   text-decoration: none;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.813rem;
   letter-spacing: 1.9px;
   transition: 1s;
@@ -144,7 +144,7 @@ body {
   height: 1.125rem;
   margin: 0 4rem 0 0;
   opacity: 0.5;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.875rem;
   font-weight: bold;
   font-stretch: normal;
@@ -182,14 +182,14 @@ body {
 
 .cur-chap {
   opacity: 0.5;
-  font-family: Roboto Slab;
+  font-family: "Roboto Slab", sans-serif;
   font-size: 0.813rem;
   color: #888;
 }
 
 .chap {
   opacity: 0.5;
-  font-family: Roboto Slab;
+  font-family: "Roboto Slab", sans-serif;
   font-size: 0.813rem;
 }
 
@@ -202,7 +202,7 @@ body {
   padding: 0;
   height: 1.188rem;
   margin: 0.188rem 0.938rem 0.125rem 0;
-  font-family: Roboto Slab;
+  font-family: "Roboto Slab", sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
   color: #4386bf;
@@ -269,14 +269,14 @@ body {
 }
 
 .span-a {
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 2rem;
   font-weight: normal;
 }
 
 .span-b {
   opacity: 0.5;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.875rem;
 }
 
@@ -294,7 +294,7 @@ body {
   background: #0290ff;
   color: #fafafa;
   height: 2rem;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', sans-serif;
   border: none;
   border-radius: 5px;
   margin-top: 1.3rem;
